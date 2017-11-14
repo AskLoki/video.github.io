@@ -1,0 +1,108 @@
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="国内视频网站在线解析接口">
+    <title>国内视频网站在线解析接口</title>
+    <link rel="stylesheet" href="https://fonts.lug.ustc.edu.cn/css?family=Raleway:200">
+    <!--<link href="http://cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet" />-->
+    <link rel="stylesheet" type="text/css" href="boos.css">
+	<link href="http://static.demo.ruyo.net/html/css2.css" rel="stylesheet" />
+</head>
+<body >
+	<div>
+    <div id="main">
+        <div class="header" style="margin-top: 5%;text-align: center;">
+            <h2>国内视频网站在线解析接口</h2>
+        </div>
+        <div class="content" style="margin: 0;text-align: center;">
+            <p>所有接口皆收集于网络 , 本页面只限测试使用。不保证所有线路都可以使用！<br>该页面定期更新 <code></code>
+    
+            </p>
+           <div class="pure-form" style="margin-top: 6%;text-align: center;">
+				<fieldset>
+					<select style="background-color: #302C48; box-shadow: none; border: none;line-height: 2m" id='open'>
+							<option value='0'>新窗口播放 </option>
+							<option value='1'>本窗口播放</option>
+						</select>
+
+					<select style="background-color: #302C48; box-shadow: none; border: none;" id='sel'></select>
+					
+						
+						<input style="background-color: #302C48; box-shadow: none; border: none;margin: 0;border-radius: 0;width: 30%;" type="text" id="url" placeholder="http://">
+					<button class="pure-button pure-button-primary" style="background-color: #9EA0B8;margin: 0;border-radius: 0;" onclick="play();">点击播放</button>
+				</fieldset>
+			</div>
+		</div>      
+    </div>
+	<script>
+	var data = [
+		{name:"通用解析1",url:"http://api.baiyug.cn/vip/index.php?url="},
+		{name:"通用解析2",url:"http://jx.ejiafarm.com/dy.php?url="},
+		{name:"通用解析3",url:"http://www.vipjiexi.com/yun.php?url="},
+		{name:"通用解析4",url:"http://api.1008net.com/v.php?url="},
+		{name:"通用解析5",url:"http://api.nepian.com/ckparse/?url="},
+		{name:"通用解析6",url:"http://player.jidiaose.com/supapi/iframe.php?v="},
+		{name:"通用解析7",url:"http://api.pucms.com/index.php?url="},
+		{name:"通用解析8",url:"http://api.wlzhan.com/sudu/?url="},
+		{name:"通用解析9",url:"http://jiexi.yanjiaozhaopinwang.com/jx1/dy.php?url="},
+		{name:"通用解析10",url:"http://www.0335haibo.com/yun.php?url="},
+		{name:"通用解析11",url:"http://yun.mt2t.com/yun?url="},
+		{name:"通用解析12",url:"http://y.mt2t.com/lines?url="},
+		{name:"通用解析13",url:"http://www.0335haibo.com/yun.php?url="},
+		{name:"通用解析14",url:"http://www.sfsft.com/video.php?url="},
+		{name:"通用解析15",url:"http://www.82190555.com/video.php?url= selected>"},
+		{name:"通用解析16",url:"http://2.jx.72du.com/video.php?url= selected>"},
+		{name:"通用解析17",url:"http://www.97panda.com/kkflv/index.php?url="},
+		{name:"通用解析18",url:"http://jx.vgoodapi.com/jx.php?url="},
+		{name:"通用解析19",url:"http://www.dgua.xyz/webcloud/?url="},
+		{name:"通用解析20",url:"http://api.91exp.com/svip/?url="},
+		{name:"通用解析21",url:"http://vip.jlsprh.com/index.php?url="},
+		{name:"通用解析22",url:"http://api.xfsub.com/index.php?url="},
+		{name:"通用解析23",url:"http://jiexi.071811.cc/jx.php?url="},
+		{name:"通用解析24",url:"http://jiexi.92fz.cn/player/vip.php?url="},
+		{name:"通用解析25",url:"http://api.baiyug.cn/vip/index.php?url="},
+		{name:"通用解析26",url:"http://api.662820.com/xnflv/index.php?url="},
+		{name:"通用解析27",url:"http://www.82190555.com/index/qqvod.php?url="},
+		{name:"通用解析28",url:"http://http://yyygwz.com/index.php?url="},
+		{name:"通用解析29",url:"http://www.97panda.com/kkflv/index.php?url="},
+		{name:"通用解析30",url:"http://jx.api.163ren.com/vod.php?url="},
+		{name:"通用解析31",url:"http://lookxw.com/yingzi/?url="},
+		{name:"通用解析32",url:"http://www.0335haibo.com/tong.php?url="},
+		{name:"通用解析33",url:"http://www.wmxz.wang/video.php?url="},
+		{name:"通用解析34",url:"http://api.97kn.com/?url="},
+		{name:"乐视解析",url:"http://apn.zhibo99.cn/mdparse/letv.php?id="},
+		{name:"优酷云解析1",url:"http://api.baiyug.cn/vip/index.php?url="},
+		{name:"优酷云解析2",url:"http://977345961.kezi.wang/ykyun/c.php?vid="},
+		];
+	for (var i in  data)
+	{
+		var opt = document.createElement ("option");
+		opt.value = data[i].url;
+		opt.innerText = data[i].name;
+		document.getElementById('sel').appendChild (opt);
+	}
+	
+	function play(){
+		var url = document.getElementById("url").value;
+		if(url.indexOf('http') == -1)
+		{	
+			alert('视频地址不正确！');return;
+		}
+		var api = document.getElementById("sel").value;
+		var open = document.getElementById("open").value;
+		url = api + url;
+		switch(open)
+		{
+			case '0':
+				window.open(url);
+				console.log(0);
+				break;
+			case '1':
+				window.location = url;
+				console.log(1);
+				break;
+ 
+		}
+	}
+	</script>
+</body>
+</html>
