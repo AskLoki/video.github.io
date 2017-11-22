@@ -6,33 +6,31 @@
     <!--<link href="http://cdn.bootcss.com/pure/0.6.0/pure-min.css" rel="stylesheet" />-->
     <link rel="stylesheet" type="text/css" href="boos.css">
 	<link href="http://static.demo.ruyo.net/html/css2.css" rel="stylesheet" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
 </head>
-<body >
-	<div>
-    <div id="main">
-        <div class="header" style="margin-top: 5%;text-align: center;">
-            <h2>国内视频网站在线解析接口</h2>
-        </div>
-        <div class="content" style="margin: 0;text-align: center;">
-            <p>所有接口皆收集于网络 , 本页面只限测试使用。不保证所有线路都可以使用！<br>该页面定期更新 <code></code>
-    
-            </p>
-           <div class="pure-form" style="margin-top: 6%;text-align: center;">
-				<fieldset>
-					<select style="background-color: #302C48; box-shadow: none; border: none;line-height: 2m" id='open'>
+<body>
+	<div class="background">
+    	<div id="main">
+        	<div class="header" style="margin-top: 5%;text-align: center;">
+            	<h2>国内视频网站在线解析接口</h2>
+        	</div>
+        	<div class="content" style="margin: 0;text-align: center;">
+            	<p>所有接口皆收集于网络 , 本页面只限测试使用。不保证所有线路都可以使用！<br>该页面定期更新 <code></code></p>
+           		<div class="pure-form">
+					<fieldset>
+						<select style="background-color: #302C48; box-shadow: none; border: none;line-height: 2m" id='open'>
 							<option value='0'>新窗口播放 </option>
 							<option value='1'>本窗口播放</option>
 						</select>
-
-					<select style="background-color: #302C48; box-shadow: none; border: none;" id='sel'></select>
-					
-						
-						<input style="background-color: #302C48; box-shadow: none; border: none;margin: 0;border-radius: 0;width: 30%;" type="text" id="url" placeholder="http://">
-					<button class="pure-button pure-button-primary" style="background-color: #9EA0B8;margin: 0;border-radius: 0;" onclick="play();">点击播放</button>
-				</fieldset>
-			</div>
-		</div>      
-    </div>
+						<select style="background-color: #302C48; box-shadow: none; border: none;" id='sel'></select>
+						<input id="media" type="text" id="url" placeholder="http://">
+						<button id="mediaa" class="pure-button pure-button-primary" onclick="play();">点击播放</button>
+					</fieldset>
+				</div>
+			</div>      
+    	</div>
+	</div>
 	<script>
 	var data = [
 		{name:"通用解析1",url:"http://api.baiyug.cn/vip/index.php?url="},
