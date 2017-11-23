@@ -12,11 +12,6 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 			border: none;
 			color: #fff;
 		}
-		input{
-			background-color: #302C48;
-			border: none;
-
-		}
 		#url{
 			
 			display: table-cell;
