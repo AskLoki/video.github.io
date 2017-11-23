@@ -17,7 +17,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 			border: none;
 
 		}
-		#media{
+		#url{
 			
 			display: table-cell;
 			background-color: #302C48; 
@@ -44,7 +44,7 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 			background-repeat: no-repeat;
 			background-size: 100%;
 	}
-	#media{
+	#url{
 			
 			width: 30%;
 	}
@@ -56,25 +56,42 @@ Copyright (c) Nicolas Gallagher and Jonathan Neal
 
 }
 @media (max-width: 320px) and (min-width: 320px){
-	#media{
+	#url{
 		margin: 2% 0 2% 0;
 		width: 80%
 	}
 
 }
 @media (max-width: 360px) and (min-width: 360px){
-	#media{
+	#url{
 		margin: 2% 0 2% 0;
 		width: 72%
 	}
 
 }
 @media (max-width: 414px) and (min-width: 375px){
-	#media{
+	#url{
 		margin: 2% 0 2% 0;
 		width: 30%
 	}
 
 }
+#open{
+	background-color: #302C48;
+	box-shadow: none; 
+	border: none;
+	line-height: 2m;
+}
+#sel{
+	background-color: #302C48;
+	box-shadow: none; 
+	border: none;
+}
+#header{
+	margin-top: 5%;
+	text-align: center;
+}
+#content{
 
-
+	text-align: center;
+}
